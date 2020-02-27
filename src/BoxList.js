@@ -5,7 +5,7 @@ import uuid from 'uuid/v4';
 
 
 const BoxList = () => {
-  const [boxes, setBoxes] = useState(boxes => [])
+  const [boxes, setBoxes] = useState([]);
 
   const addBox = (box) => {
     const newBox = {
@@ -25,13 +25,14 @@ const BoxList = () => {
 
   return (
     <div className="boxList">
-      {boxes.map(box => (<Box 
+      {boxes.map(box => (<Box
           key={box.id}
           id={box.id}
-          backgroundColor={box.backgroundColor} 
-          width={`${box.width}px`} 
+          backgroundColor={box.backgroundColor}
+          width={`${box.width}px`}
           height={`${box.height}px`}
-          removeBox={removeBox} />
+          removeBox={removeBox}
+          />
       ))}
       <BoxForm addBox={addBox} />
     </div>

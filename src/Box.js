@@ -1,7 +1,7 @@
 import React from 'react';
 import './Box.css';
 
-const Box = ({ id, backgroundColor, width, height, removeBox}) => {
+const Box = ({ id, backgroundColor, width, height, removeBox, testid}) => {
   const style = {
     backgroundColor,
     width,
@@ -9,11 +9,11 @@ const Box = ({ id, backgroundColor, width, height, removeBox}) => {
   }
 
   return (
-    <div className="Box">
+    <div className="Box" data-testid = "TEST">
       <div style={style} className="Box-box">
         <button className="Box-remove" onClick={() => removeBox(id)}>X</button>
       </div>
-      
+
     </div>
   );
 };
